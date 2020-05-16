@@ -168,8 +168,7 @@ n + geom_histogram(binwidth = 10, aes(fill=Genre), color="Black") +
   coord_cartesian(ylim = c(0,50))
 
 # improve no 1
-w + geom_point(aes(sih + xlab("Money Axis") + ylab ("Number of Movies")ze=BudgetMillion)) + geom_smooth() + facet_grid(Genre~Year)+
-  coord_cartesian(ylim= c(0,100))
+w + geom_point(aes(size=BudgetMillion)) + geom_smooth() + facet_grid(Genre~Year) + coord_cartesian(ylim = c(0,100))
 
 #-------------------------------Theme 
 o <- ggplot(data= movies, aes(x=BudgetMillion))
