@@ -208,3 +208,18 @@ h + xlab("Money (in millions)") + ylab ("Number of Movies")+
         legend.position = c(1,1),
         legend.justification = c(1,1), 
         plot.title = element_text(color="Darkblue", size=30))
+
+#Homework Section 
+hwmovies <- read.csv("Section6HomeworkData.csv")
+head(hwmovies)
+colnames(hwmovies) <- 
+  c("DayOfWeek", "Director", "Genre", "Title", "ReleaseDate","Studio","AdgustedGross$Mill",
+    "BudgetinMill","Gross$Mill","IMDbRaing","MovieLensRating",
+    "OverseasGross$Mill","OverseasPercentage","Profit$Mill","ProfitPercentage",
+    "Runtime","US$Mill", "GrossPercentageUS")
+filter1 <- (hwmovies$Genre== "action") | (hwmovies$Genre == "adventure") | (hwmovies$Genre == "comedy") | (hwmovies$Genre == "drama")
+filter2 <- (hwmovies$Studio == "Buena Vista Studios") | (hwmovies$Studio == "Fox") | (hwmovies$Studio == "Paramount Pictures") | (hwmovies$Studio == "Sony") | (hwmovies$Studio == "Universal") | (hwmovies$Studio == "WB")
+
+hwmovies2 <- hwmovies[filter1 & filter2,]
+plot2 <- ggplot(data = hwmovies2, aes(x=Genre, y=GrossPercentageUS))
+plot2 + geom_jitter(aes(size=BudgetinMill, color=Studio))+geom_boxplot(alpha=0.7,outlier.colour = NA)
