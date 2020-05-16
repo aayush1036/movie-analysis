@@ -19,15 +19,15 @@ summary(movies)
 #-----------------------Aesthetics
 library(ggplot2)
 
-ggplot(data = movies, aes(x=CriticRating, y=AudienceRating))
+a1 <- ggplot(data = movies, aes(x=CriticRating, y=AudienceRating))
 #Adding Geometry
-ggplot(data = movies, aes(x=CriticRating, y=AudienceRating)) + 
+a2 <- ggplot(data = movies, aes(x=CriticRating, y=AudienceRating)) + 
   geom_point()
 #Adding Color
-ggplot(data = movies, aes(x=CriticRating, y=AudienceRating, color=Genre)) + 
+a3 <- ggplot(data = movies, aes(x=CriticRating, y=AudienceRating, color=Genre)) + 
   geom_point()
 #Adding size
-ggplot(data = movies, aes(x=CriticRating, y=AudienceRating, color=Genre, 
+a4 <- ggplot(data = movies, aes(x=CriticRating, y=AudienceRating, color=Genre, 
                           size=BudgetMillion)) + 
   geom_point()
 #>>>> This is number 1 (we will improve it)
@@ -71,6 +71,8 @@ r+ geom_point(color="Darkgreen")
 #r+geom_point(aes(color="Darkgreen"))
 #If you want to map the color to a variable then use #1 or if you want to set the 
 #color to a particular value for the whole chart then use the method #2
+
+#Change the size section
 
 #1 Mapping
 r + geom_point(aes(size=BudgetMillion))
