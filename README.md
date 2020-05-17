@@ -201,4 +201,4 @@ Then we create the plot object which has genre on the x axis and gross percentag
 
 Then we apply the jitter geometry with the size aesthetic set to budget which will size the dots representing a particular movie according to its budget. We set the color aesthetic to studio which colors the dots according to the studio which produced the movie. Then we apply the boxplot geometry with the alpha property set to 0.7 so that it becomes a little transparent and we set the outlier color to NA to get the desired result. 
 
-### The datasets used in this project are specified in the csv files
+### The datasets used in this project are specified in the csv files and the description of what is done in the code is given in the pdf file which is attached 
